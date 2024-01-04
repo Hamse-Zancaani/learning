@@ -26,6 +26,6 @@ EndDate:{
 
 })
 
-const courseModel=mongoose.model('User',courseSchema)
+const courseModel=mongoose.model('Course',courseSchema)
 
 module.exports=courseModel;

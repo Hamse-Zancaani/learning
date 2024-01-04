@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
-const PORT = process.env.PORT ||8000;
+const PORT = process.env.PORT ||7000;
 const dotenv= require("dotenv")
 dotenv.config({path:'./.env'})
 
@@ -22,7 +22,11 @@ app.use(cors());
 
 //setup the express to parse the data
 const authRoutes = require('./Routes/authRoutes');
-const courseRoutes= require('./routes/courseRoutes')
+const courseRoutes= require('./Routes/courseRoutes')
+const contentRoutes= require('./Routes/contentRoutes')
+
+// setup the middleware to parse the data
+app.use(express.json());
 
 
 //set up the middlware
@@ -30,9 +34,7 @@ const courseRoutes= require('./routes/courseRoutes')
 app.use('/auth',authRoutes);
 
 app.use('/course',courseRoutes)
-
-// setup the middleware to parse the data
-app.use(express.json());
+app.use('/content',contentRoutes)
 
 
 

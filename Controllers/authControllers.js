@@ -52,7 +52,7 @@ const{email,password}=req.body
     //  const token = createToken(User._id)
    // const token = createToken(User._id)
 
-    res.status(200).json({email})
+    res.status(200).json({message:"email is created",email})
     }catch{
       res.status(404).json({message:"oops! can't create this user"})
     }

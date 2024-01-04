@@ -4,8 +4,8 @@ const Course = require('../models/courseModel');
 exports.Courses= async(req,res)=>{
 
     try{
-      const allCourses=  await Course.find({})
-        res.status(200).json(allCourses)
+       await Course.find({})
+        res.status(200).json('all Courses')
     } catch(error){
         console.log("error in getting all Courses")
     }
